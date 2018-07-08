@@ -1,11 +1,4 @@
-def print_line_separator(remark=''):
-    if remark ==  '':
-        print(" ")
-        print("*" * 30)
-        print(" ")
-    else:
-        print(" ")
-        print("*" * 15 , remark , "*" * 15 , sep=" ")
+import util.PrintUtil as pu
 
 # 字符编码的说明以下链接
 # https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000
@@ -15,19 +8,19 @@ print(ord_A)
 chr_88 = chr(88)
 print(chr_88)
 
-print_line_separator()
+pu.print_line_separator()
 
 # 纯英文的str可以用ASCII编码为bytes，内容是一样的，含有中文的str可以用UTF-8编码为bytes。含有中文的str无法用ASCII编码，因为中文编码的范围超过了ASCII编码的范围，Python会报错。
 print('ABC'.encode('ascii'))
 print('中文'.encode('utf-8'))
 # print('中文'.encode('ascii'))
 
-print_line_separator()
+pu.print_line_separator()
 
 print(len('中文')) #计算字符长度
 print(len('中午'.encode('utf-8')))
 
-print_line_separator()
+pu.print_line_separator()
 
 s1 = 78
 s2 = 85
@@ -43,7 +36,7 @@ print('你好,%s的成绩提高了%.2f%%' % ('小明',r))
     tuple 也是有序的列表 没有append()，insert()这样的方法 因为不能修改
     tuple和list非常类似，但是tuple一旦初始化就不能修改
 '''
-print_line_separator("以下list/tuple的使用")
+pu.print_line_separator("以下list/tuple的使用")
 
 classmates = ['tom','jerry','lucy']
 print("访问list的最后一个元素,下标可以使用classmates[len(classmates) - 1] : {}".format(classmates[len(classmates) - 1]))
@@ -55,7 +48,7 @@ print(classmates)
 classmates.pop()
 classmates.sort()
 
-print_line_separator()
+pu.print_line_separator()
 
 cms = ('Michael', 'Bob', 'Tracy')
 '''
@@ -98,7 +91,7 @@ print(L[1][1])
 print(L[2][-1])
 print(L[2][len(L[2]) - 1])
 
-print_line_separator("以下条件判断")
+pu.print_line_separator("以下条件判断")
 
 # 只要x是非零数值、非空字符串、非空list等，就判断为True，否则为False。
 x=(1,)
@@ -109,7 +102,7 @@ print("使用int()函数转化str为int: {}".format(int("33")))
 
 
 
-print_line_separator("以下循环")
+pu.print_line_separator("以下循环")
 sum = 0
 n = 99
 while n > 0:
@@ -127,7 +120,7 @@ while n < 10:
     print(n)
 
 
-print_line_separator("以下dict/set使用说明")
+pu.print_line_separator("以下dict/set使用说明")
 '''
 和list比较，dict有以下几个特点：
     查找和插入的速度极快，不会随着key的增加而变慢；

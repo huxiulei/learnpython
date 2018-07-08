@@ -1,4 +1,5 @@
 import math
+import util.PrintUtil as pu
 '''
 定义函数时，需要确定函数名和参数个数；
 
@@ -10,14 +11,6 @@ import math
 
 函数可以同时返回多个值，但其实就是一个tuple。
 '''
-def print_line_separator(remark=''):
-    if remark ==  '':
-        print(" ")
-        print("*" * 30)
-        print(" ")
-    else:
-        print(" ")
-        print("*" * 15 , remark , "*" * 15 , sep=" ")
 
 # 函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”：
 alias_abs = abs
@@ -25,7 +18,7 @@ print(alias_abs(-1))
 
 print(hex(12)) # 0xc 十六进制0x开头
 
-print_line_separator("定义函数")
+pu.print_line_separator("定义函数")
 
 def my_abs(x):
     # 不加这个判断的话 TypeError: '>' not supported between instances of 'str' and 'int' 会是这个错误
@@ -41,7 +34,7 @@ print(my_abs(1))
 print(my_abs(-11))
 # print(my_abs('x'))
 
-print_line_separator()
+pu.print_line_separator()
 
 
 
@@ -60,7 +53,7 @@ xy = move(100, 100, 60, math.pi / 6)
 print(x, y)
 print(xy)
 
-print_line_separator()
+pu.print_line_separator()
 
 
 ## 计算指定数xx的n次方
@@ -77,7 +70,7 @@ def power(xx, n=2):
 
 print(power(5,2))
 print(power(3))
-print_line_separator("函数的参数")
+pu.print_line_separator("函数的参数")
 
 def calc(*numbers):
     sum = 0
@@ -100,7 +93,7 @@ def f2(a, b, c=0, *, d, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
 
 
-print_line_separator("递归函数")
+pu.print_line_separator("递归函数")
 
 
 def fact(f):
@@ -150,7 +143,7 @@ def fact_iter(num, product):
 print(fact1(10))
 
 
-print_line_separator("递归实现汉诺塔")
+pu.print_line_separator("递归实现汉诺塔")
 def hnt(n,a,b,c):
     if n == 1:  # 如果a只有1盘子
         print(a, '-->', c);  # 直接把盘子从a移到c

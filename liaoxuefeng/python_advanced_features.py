@@ -2,6 +2,7 @@
 Python高级特征   切片/迭代/列表生成式/生成器/迭代器
 '''
 import os
+import util.PrintUtil as pu
 def trim(str):
     str_len = len(str)
 
@@ -36,6 +37,7 @@ def trim(str):
 after_trim_str = trim("  ab c  ")
 print("去除左右空格后的字符串是{}".format(after_trim_str))
 
+pu.print_line_separator()
 
 # 去除一个字符串的前后空格，中间的忽略
 def trim2(s):
@@ -46,7 +48,7 @@ def trim2(s):
     else:
         return s
 print(trim2(" he l lo  "))
-
+pu.print_line_separator()
 
 def trim3(s):
     i = 0
@@ -61,7 +63,7 @@ def trim3(s):
 trim3_str = trim3("  A BC  ")
 print("trim3_str:{}".format(trim3_str))
 
-
+pu.print_line_separator("找到list中的最小值和最大值返回tuple类型")
 # 请使用迭代查找一个list中最小和最大值，并返回一个tuple：
 def findMinAndMaxFromList(L):
     if len(L) == 0:
@@ -92,7 +94,7 @@ LL = ['Hello', 'World', 18, 'Apple', None]
 LL_after = [ll.lower() for ll in LL if isinstance(ll,(str))]
 print(LL_after)
 
-
+pu.print_line_separator("斐波拉契数列")
 # 斐波拉契数列
 def fib(max):
     n, a, b = 0, 0, 1
@@ -106,6 +108,7 @@ def fib(max):
 fib(5)
 
 
+pu.print_line_separator("杨辉三角")
 
 # 杨辉三角
 def triangles():

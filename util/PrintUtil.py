@@ -6,3 +6,4 @@ def print_line_separator(remark=''):
     else:
         print(" ")
         print("*" * 15 , remark , "*" * 15 , sep=" ")
+        print(" ")

@@ -1,7 +1,4 @@
-def print_line_separator():
-    print(" ")
-    print("**" * 30)
-    print(" ")
+import util.PrintUtil as pu
 
 
 class Student():
@@ -34,12 +31,12 @@ print("s.name = %s,s.age = %s"%(s.name,s.age))
 #print("s.nickname = ".format(s.__nickname))
 s.sayHello()
 
-print_line_separator()
+pu.print_line_separator("访问私有属性")
 
 # 其实python的私有不是真正意义上的私有 只是使用了 name mangling技术 如果真要访问的话 可以使用下面方法
 print(Student.__dict__)
 print("访问私有属性 nickname: {0}".format(s._Student__nickname))
-print_line_separator()
+pu.print_line_separator()
 
 # 可以直接把Student2当作参数传递, Python是弱语言 若sayHello中有用到Student2中不存在的属性 会报错
 Student.sayHello(Student2)

@@ -1,3 +1,4 @@
+import util.PrintUtil as pu
 class Person():
     '''
     这里是关于类Person的文档说明
@@ -63,14 +64,14 @@ p1()
 print(p1)
 
 
-print("**" * 20)
+pu.print_line_separator()
 
 person1 = Person("one")
 person2 = Person("two")
 print(person1 > person2)
 
 
-print("**" * 20)
+pu.print_line_separator()
 
 Person.say()
 person1.say()

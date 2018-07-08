@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
-
+import util.PrintUtil as pu
 '''
 位置参数：
 
@@ -17,12 +17,6 @@
 默认参数：默认参数的赋值只会在函数定义的时候绑定一次，默认值不会再被修改
 
 '''
-
-
-def print_line_separator():
-    print(" ")
-    print("**" * 30)
-    print(" ")
 
 
 def print_hello(name, sex):
@@ -86,7 +80,7 @@ c=3
 func(a, b, c)
 
 
-print_line_separator()
+pu.print_line_separator()
 
 # 2、包裹关键字传递 kargs是一个字典(dict)，收集所有关键字参数
 def func(**kargs):
@@ -132,7 +126,7 @@ func('tanggu', 25, 2, 'music', 'sport', key1='value1')
 
 
 
-print_line_separator()
+pu.print_line_separator()
 
 # Python中 *args 和 **kwargs 的区别
 def foo(*args, **kwargs):
@@ -165,7 +159,7 @@ kwargs =  {'a': 1, 'c': 3, 'b': '2'}
 '''
 
 
-print_line_separator()
+pu.print_line_separator()
 
 def kw_dict(**kwargs):
     return kwargs
@@ -174,7 +168,7 @@ def kw_dict(**kwargs):
 print (kw_dict(a=1, b=2, c=3) == {'a': 1, 'b': 2, 'c': 3})
 
 
-print_line_separator()
+pu.print_line_separator()
 
 
 

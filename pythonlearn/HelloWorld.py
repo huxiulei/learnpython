@@ -1,3 +1,5 @@
+import util.PrintUtil as pu
+
 def hello_world():
     print("Hello Python")
 
@@ -15,6 +17,8 @@ print("m: {}".format(m))
 print("id(m) : {}, type(m):{}".format(id(m),type(m)))
 print("id(n) : {}, type(n):{}".format(id(n),type(n)))
 
+pu.print_line_separator()
+
 #一只敏捷的棕色狐狸跳到了一只懒狗身上。该句据说是包含所有26个字母的最短的句子。
 print('The quick brown fox', 'jumps over', 'the lazy dog')
 
@@ -23,6 +27,7 @@ print('100 + 200 =', 100 + 200)
 #name = input("请输入你的名称: ")
 #print("欢迎: ",name)
 
+pu.print_line_separator("print中可以使用'''来打印多行")
 print('''
 hha
 hhe
@@ -40,5 +45,6 @@ s4 = r'''Hello,\n
 Lisa!'''
 print(s4)
 
+pu.print_line_separator("转义可以使用\但是%的转义还是使用%")
 # 对百分号转义的话 也要使用%  一个参数的话可以省了括号
 print('增长率%s%% 你很棒%s'%(7,'tom'))
