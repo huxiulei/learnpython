@@ -118,5 +118,10 @@ def triangles():
         L= [(L + [0])[i] + ([0] + L)[i] for i in range(len(L)+1)]
 
 
-for i in range(10):
-    print(next(triangles()))
+# 因为triangles返回的是一个generator 需要手动的调用   输出10行退出
+row_index = 0
+for t in triangles():
+    print(t)
+    row_index = row_index + 1
+    if row_index == 10:
+        break
