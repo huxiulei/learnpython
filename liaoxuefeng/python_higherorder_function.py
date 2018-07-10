@@ -51,6 +51,7 @@ def f(x):
 
 list1 = map(f,[1,2,3,4,5])
 print(list(list1))
+print(list(list1)) # 再次打印的话会是[] 因为map返回的是一个迭代器，迭代器只能遍历一次
 
 
 str1 = map(str,[1,2,3,4,5])
