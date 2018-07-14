@@ -99,14 +99,19 @@ pu.print_line_separator("斐波拉契数列")
 def fib(max):
     n, a, b = 0, 0, 1
     while n < max:
-        print(b)
+        # print(b)
+        yield b
         a, b = b, a + b
         n = n + 1
     return 'done'
 
 
-fib(5)
-
+fi = fib(5)
+print(type(fi))
+print(type((x*x for x in range(5))))
+print(type([x*x for x in range(5)]))
+for i in range(5):
+    print(next(fi))
 
 pu.print_line_separator("杨辉三角")
 
