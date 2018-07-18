@@ -5,6 +5,7 @@ import util.PrintUtil as pu
 from io import StringIO
 from io import BytesIO
 import os
+import json
 
 '''
 很多时候，数据读写不一定是文件，也可以在内存中读写。
@@ -97,3 +98,38 @@ print(getFiles('D:\PycharmProjects\learnpython'))
 pu.print_line_separator()
 # print(os.path.isdir('D:\PycharmProjects\learnpython\liaoxuefeng'))
 # print(os.listdir('D:\PycharmProjects\learnpython\liaoxuefeng'))
+
+
+
+'''
+python中有 pickle序列化(pickle.dumps(d) / pickle.loads(s))  但是可能在不同的版本中兼容性不同 故此处不举例了
+
+'''
+pu.print_line_separator('json序列化对象')
+
+class Student(object):
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+def student2dict(stu):
+    return {'name':stu.name,'age':stu.age}
+
+def dict2student(d):
+    return Student(d['name'],d['age'])
+
+stu = Student('tom',15)
+print(json.dumps(stu,default=student2dict))
+
+pu.print_line_separator('json反序列化')
+stu_str = '{"name": "tom", "age": 15}'
+print(json.loads(stu_str,object_hook=dict2student))
+
+
+obj = dict(name='小明', age=20)
+s_obj = json.dumps(obj, ensure_ascii=True)
+s_obj2 = json.dumps(obj, ensure_ascii=False)
+# 对含有中文的dict进行json序列化:{"name": "\u5c0f\u660e", "age": 20}
+print('对含有中文的dict进行json序列化:{}'.format(s_obj))
+# 对含有中文的dict进行json序列化:{"name": "小明", "age": 20}
+print('对含有中文的dict进行json序列化:{}'.format(s_obj2))
